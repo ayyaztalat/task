@@ -7,7 +7,7 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.mindorks.framework.mvvm"
+        applicationId "com.testing.task.mvvm"
         minSdkVersion 16
         targetSdkVersion 29
         versionCode 1
@@ -15,12 +15,19 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
 }
@@ -39,7 +46,11 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:1.1.0"
     implementation 'android.arch.lifecycle:extensions:1.1.1'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
-    implementation 'com.amitshekhar.android:rx2-android-networking:1.0.2'
+//    implementation 'com.amitshekhar.android:rx2-android-networking:1.0.2'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.18'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.4.0"
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.1'
 }
